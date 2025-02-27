@@ -143,3 +143,15 @@ container.addEventListener("wheel", (e) => {
         Math.max(targetTranslate - scrollVelocity, -maxTranslate), 0
     );
 }, { passive: false }); // L'option { passive: false } permet d'utiliser e.preventDefault()lse}); //activation e.preventDefault()
+
+// une variable pour stocker les touchStartY de l'utilisateur
+
+let touchStart = 0; 
+
+//Eouteur pour détecter les touches de l'utilisateur 
+
+container.addEventListener('touchStart', (e) =>{
+    
+    // sauvegarder les touchés dans la variable touch
+    touchStart = e.touches[0].touchY
+})
